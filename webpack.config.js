@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/js/app.js',
+  entry: './src/js/app.ts',
 
   output: {
     path: 'dist',
@@ -11,14 +11,13 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js'],
+    extensions: ['', '.js', '.ts'],
   },
 
   module: {
     loaders: [{
-      test: /.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
+      test: /.ts$/,
+      loader: 'ts'
     }]
   },
   
